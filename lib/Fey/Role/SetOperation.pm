@@ -119,7 +119,7 @@ role
 
         return
             ( join q{ } . $self->keyword_clause($dbh) . q{ },
-              map { '(' . $_->sql($dbh) . ')' }
+              map { $_->sql($dbh) }
               $self->_set_elements()
             );
     };
